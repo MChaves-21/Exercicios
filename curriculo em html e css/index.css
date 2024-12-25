@@ -1,0 +1,56 @@
+body {
+    font-family: "Tinos", serif;
+    color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  
+  #conteiner {
+    max-width: 800px; /* Define a largura máxima do conteiner */
+    height: 700px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    display: flex; /* Habilita Flexbox para o conteiner */
+    flex-wrap: wrap; /* Permite que os elementos dentro do conteiner quebrem para a próxima linha se necessário */
+    gap: 25px; /* Adiciona espaço entre os elementos */
+  }
+  
+  #esquerda {
+    flex: 2; /* Permite que o elemento esquerdo ocupe mais espaço */
+    margin-right: 20px; /* Adiciona espaço à direita do elemento esquerdo */
+  }
+  
+  #direita {
+    flex: 1; /* Permite que o elemento direito ocupe menos espaço */
+  }
+  
+  /* Estilos para títulos */
+  h2 {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-style: oblique;
+    
+  }
+  
+  /* Estilos para seções */
+  section {
+    margin-bottom: 20px;
+  }
+  
+
+  /* Estilos para links (opcional) */
+  a {
+    color: #007bff;
+
+  }
+  /* Estilos para elementos específicos (opcional) */
+
+#projetos{margin-top: 84px;}
+
