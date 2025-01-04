@@ -3,7 +3,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  /* Isso faz com que padding e bordas não causem o estouro do layout */
+    box-sizing: border-box;
+    /* Isso faz com que padding e bordas não causem o estouro do layout */
 }
 
 #anuncio {
@@ -17,8 +18,7 @@
 #cabecalho {
     display: flex;
     justify-content: space-between;
-
-    background-color:#d741a7;
+    background-color: #d741a7;
     color: inherit;
     font-family: "Lavishly Yours", serif;
     font-weight: 400;
@@ -71,39 +71,58 @@ main {
     text-align: center;
     margin: 10px;
 }
+#produtos{display: flex;}
 
 img {
-    width: 60%;
-    height: 27vh;
+    height: 75%;
+    width: 75%;
+    margin: 10px;
     margin: auto;
 }
 
 #grupo {
-    display: flex;               /* Usando flexbox para colocar os elementos na mesma linha */
-    overflow-x: auto;            /* Permite a rolagem horizontal */
-    white-space: nowrap;         /* Impede que os itens quebrem para a linha (apenas para o contêiner) */
+    display: flex;
+    /* Usando flexbox para colocar os elementos na mesma linha */
+    overflow-x: auto;
+    /* Permite a rolagem horizontal */
+    white-space: nowrap;
+    /* Impede que os itens quebrem para a linha (apenas para o contêiner) */
 }
 
 .individuo {
     flex: 0 0 auto;
-    margin-right: 10px;  /* Reduz a margem entre os itens */
+    margin-right: 10px;
+    /* Reduz a margem entre os itens */
     padding: 10px;
     display: flex;
     flex-direction: column;
-    max-width: 280px;  /* Reduz o tamanho máximo das divs */
-    width: auto;
+   
+    /* Reduz o tamanho máximo das divs */
+   
+    height: 35%;
+    width: 35%;
+    margin: 10px;
 }
 
 .individuo img {
-    width: 100%;                 /* Imagem ocupa 100% da largura da div */
-    height: auto;                /* Mantém a proporção das imagens */
-    margin-bottom: 10px;         /* Espaço entre a imagem e o texto */
+    width: 100%;
+    /* Imagem ocupa 100% da largura da div */
+    height: auto;
+    /* Mantém a proporção das imagens */
+    margin-bottom: 10px;
+    /* Espaço entre a imagem e o texto */
 }
 
 .individuo p {
-    word-wrap: break-word;       /* Permite a quebra de linha no texto */
-    white-space: normal;         /* Garante que o texto possa quebrar a linha */
-    margin: 0;                   /* Remove margens extras do parágrafo */
+    word-wrap: break-word;
+    /* Permite a quebra de linha no texto */
+    white-space: normal;
+    /* Garante que o texto possa quebrar a linha */
+    margin: 0;
+    /* Remove margens extras do parágrafo */
 }
-#final{display: flex;
-justify-content: space-evenly;}
+
+#final {
+    display: flex;
+    justify-content: space-evenly;
+}
