@@ -1,23 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lavishly+Yours&family=Montserrat&family=Tinos&display=swap');
 
+@media (max-width: 867px) {
+    #final {
+        display: flex;          /* Garante que eles ainda sejam flex containers */
+        flex-direction: column; /* Alinha os elementos um abaixo do outro */
+        margin: 10px;
+    }
+    #contato,#form{
+      
+        font-size: 18px;
+    }
+   
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lavishly+Yours&family=Meddon&family=Montserrat&family=Tinos&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* Isso faz com que padding e bordas não causem o estouro do layout */
-
+    text-align: center;
 }
 
 body {
     font-family: Arial, sans-serif;
     transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
 }
 
 #anuncio {
-    text-align: center;
+  
     background-color: #232323;
     color: white;
-    padding: 10px;
+    padding: 7px;
     font-size: 1.1rem;
 }
 
@@ -42,21 +58,19 @@ h1 {
     /* Faz com que o link tenha a mesma cor do texto normal */
     margin: 0.2rem;
     font-size: 18px;
-
-}
-.contato{
-    margin-bottom: 60px;
-    padding: 0px;
     
 }
+.contato{
+    margin: 30px;
+}
 #cabecalho>div {
-    padding: 10px;
+    padding: 7px;
     font-size: x-large;
 }
 
 #capa {
     background-image: url(img/capa_cel.png);
-    text-align: center;
+  
 
     width: 100%;
     /* 100% da largura do contêiner pai (ou da tela) */
@@ -66,41 +80,68 @@ h1 {
     /* Garante que a imagem seja cortada para preencher a área sem distorcer*/
     padding: 1px;
 }
-
+#tisubitulo{margin-top: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+font-size: 27px;}
+    
 #titulo {
-    margin-top: 90px;
-    color: gold;
+    margin-top: 40px;
+    font-size: 32px;
+    font-weight: bold;
+  
+    color: #D17A00; /* Cor de chocolate quente */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.2    
 }
 
 #subitulo {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: white;
+font-family: "Meddon", serif;
+font-weight: 900;
+font-style: normal;
+margin-bottom: 60px; 
+color: rgb(30, 10, 250);
 }
 
 #compra {
-    color: blue;
+    color: rgb(255, 255, 255);
+    background-color: #ffaa007e;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px rgba(0, 0, 0, 0.476);
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.455);
 }
 
-main {
-    text-align: center;
+main>h1{
     margin: 10px;
+    font-size: 30px;
+  
 }
-#produtos{display: flex;
-flex-wrap: wrap;}
+#produtos{  display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem de linha quando necessário */
+    gap: 10px; /* Espaço entre os itens */
+margin: 15px;
+}
+    
 
 
 img {
     height: 220px;
     width: 400px;
-    margin: 10px;
 }
-.produto {
-    flex: 1 1 147px; /* Flex grow, flex shrink e tamanho base de 147px */
-    min-width: 147px; /* Tamanho mínimo do item */
-    max-width: 341px; /* Tamanho máximo do item */
-  }  
 
+.produto p {
+    margin: 0; /* Remove a margem do parágrafo */
+    word-wrap: break-word; /* Garante que palavras longas quebrem quando necessário */
+    overflow: hidden; /* Impede que o texto ultrapasse os limites da div */
+    text-overflow: ellipsis; /* Adiciona '...' ao final do texto */
+    white-space: normal; /* Permite que o texto quebre normalmente */
+    width: 100%; /* Garante que o parágrafo ocupe toda a largura disponível */
+    box-sizing: border-box;
+}
+  
 #grupo {
     display: flex;
     /* Usando flexbox para colocar os elementos na mesma linha */
@@ -114,7 +155,7 @@ img {
     flex: 0 0 auto;
     margin-right: 10px;
     /* Reduz a margem entre os itens */
-    padding: 10px;
+    padding: 1px;
     display: flex;
     flex-direction: column;
    
@@ -156,6 +197,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 15px;
+  
   }
   
   /* Estilo dos labels */
@@ -178,7 +220,7 @@ img {
   
   /* Efeito ao focar nos campos de entrada */
   input:focus {
-    border: 1px solid #4caf50;
+    border: 1px solid #00ff08;
   }
   
   /* Estilo dos botões */
@@ -203,7 +245,7 @@ img {
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  #conside{margin: 30px;
+  #conside{margin: 20px;
 font-size: 18px;}
 .dark-mode {
     background-color: #121212;
@@ -231,4 +273,21 @@ font-size: 18px;}
 /* Modo escuro - Ícone do toggle */
 .dark-mode .mode-toggle {
     color: #000000;  /* Cor do ícone no modo escuro */
+}
+
+.light-mode #anuncio{
+    background-color: #efab00;
+    color:  #232323;
+}
+#conside{
+    background-color: #d741a7;
+    font-size: 18px;
+    margin: 0px;
+  
+    color: white;
+    padding: 7px;
+    margin-top: 15px;
+}
+#contato{text-align: center;
+    margin: 12px;
 }
