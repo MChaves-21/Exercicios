@@ -5,6 +5,12 @@
     padding: 0;
     box-sizing: border-box;
     /* Isso faz com que padding e bordas não causem o estouro do layout */
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #anuncio {
@@ -19,10 +25,13 @@
     display: flex;
     justify-content: space-between;
     background-color: #d741a7;
-    color: inherit;
-    font-family: "Lavishly Yours", serif;
-    font-weight: 400;
-    font-style: normal;
+}
+
+.material-symbols-outlined {
+    font-size: 48px;  /* Tamanho do ícone */
+    color: #fdfdfd;   /* Cor do ícone */
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 a,
@@ -31,9 +40,15 @@ h1 {
     /* Remove o sublinhado */
     color: inherit;
     /* Faz com que o link tenha a mesma cor do texto normal */
-    margin: 0.1rem;
-}
+    margin: 0.2rem;
+    font-size: 18px;
 
+}
+.contato{
+    margin-bottom: 60px;
+    padding: 0px;
+    
+}
 #cabecalho>div {
     padding: 10px;
     font-size: x-large;
@@ -71,14 +86,20 @@ main {
     text-align: center;
     margin: 10px;
 }
-#produtos{display: flex;}
+#produtos{display: flex;
+flex-wrap: wrap;}
+
 
 img {
-    height: 75%;
-    width: 75%;
+    height: 220px;
+    width: 400px;
     margin: 10px;
-    margin: auto;
 }
+.produto {
+    flex: 1 1 147px; /* Flex grow, flex shrink e tamanho base de 147px */
+    min-width: 147px; /* Tamanho mínimo do item */
+    max-width: 341px; /* Tamanho máximo do item */
+  }  
 
 #grupo {
     display: flex;
@@ -97,9 +118,7 @@ img {
     display: flex;
     flex-direction: column;
    
-    /* Reduz o tamanho máximo das divs */
-   
-    height: 35%;
+    height: 40%;
     width: 35%;
     margin: 10px;
 }
@@ -125,4 +144,91 @@ img {
 #final {
     display: flex;
     justify-content: space-evenly;
+} 
+ div>p,h2{
+    margin: 20px;
+    font-size: 20px;
+    
+ }
+  
+  /* Estilo para o formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Estilo dos labels */
+  label {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilo dos campos de entrada */
+  input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  /* Efeito ao focar nos campos de entrada */
+  input:focus {
+    border: 1px solid #4caf50;
+  }
+  
+  /* Estilo dos botões */
+  button {
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  /* Estilo para o campo de data (opcional) */
+  input[type="date"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  #conside{margin: 30px;
+font-size: 18px;}
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode h1, .dark-mode p {
+    color: #ffffff;
+}
+
+/* Estilos do botão (ícone de alternância) */
+.mode-toggle {
+    font-size: 36px;
+    cursor: pointer;
+    display: block;
+    
+    transition: color 0.3s;
+}
+
+/* Ícones de modo claro e escuro */
+.mode-toggle {
+    color: #ffab00;  /* Cor do ícone no modo claro */
+}
+
+/* Modo escuro - Ícone do toggle */
+.dark-mode .mode-toggle {
+    color: #000000;  /* Cor do ícone no modo escuro */
 }

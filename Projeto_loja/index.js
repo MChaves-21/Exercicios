@@ -75,3 +75,19 @@ function validarFormulario(event) {
 
 // Adicionando o evento de validação ao formulário
 document.getElementById("cadastroForm").addEventListener("submit", validarFormulario);
+
+const modeToggle = document.getElementById('mode-toggle');
+const body = document.body;
+
+modeToggle.addEventListener('click', () => {
+    // Alterna entre modos claro e escuro
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        modeToggle.textContent = 'nightlight'; // Muda para ícone de lua (noite)
+    } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        modeToggle.textContent = 'wb_sunny'; // Muda para ícone de sol (dia)
+    }
+});
