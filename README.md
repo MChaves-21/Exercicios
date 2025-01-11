@@ -1,1 +1,1 @@
-Repositorio com projetos e exercicios
+Exercicios de cursos ou ideias que eu tive para treinar
