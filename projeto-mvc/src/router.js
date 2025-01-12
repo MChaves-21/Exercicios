@@ -1,19 +1,23 @@
-const express = require('express')
-const postController = require('./controllers/postController')
-const adminController = require('./controllers/adminController')
+const express = require('express');
+const listaTarefas = require('./controllers/listaTarefas'); // Importa o controlador
+const { taf } = require('./controllers/listaTarefas'); // Importa o array de tarefas
+const router = express.Router();
 
-const router = express.Router()
+// Rota para renderizar a página inicial com o array de tarefas
+router.get('/', listaTarefas.index);
 
-router.get('/', postController.index)
+// Rota para exibir a lista de tarefas
+router.get('/tarefas', listaTarefas.tarefas);
 
-router.get('/posts/:id', postController.show)
+// Rota para excluir uma tarefa
+router.post('/excluir/:id', (req, res) => {
+  const idToDelete = req.params.id; // Recupera o id da tarefa a ser excluída
 
-// Rotas para páginas administrativas
-router.get('/admin', adminController.showAdminPage)
-router.get('/admin/create', adminController.showCreatePage)
-router.post('/admin/create', adminController.createPost)
-router.get('/admin/edit/:id', adminController.showEditPage)
-router.post('/admin/update/:id', adminController.updatePost)
-router.post('/admin/delete/:id', adminController.deletePost)
+  // Filtra o array original, removendo a tarefa com o id especificado
+  const updatedTaf = taf.filter(tarefa => tarefa.id !== idToDelete);
 
-module.exports = router
+  // Após a exclusão, renderiza novamente a página com o array atualizado
+  res.render('tarefas', { taf: updatedTaf });
+});
+
+module.exports = router;
