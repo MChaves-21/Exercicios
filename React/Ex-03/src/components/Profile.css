@@ -1,0 +1,41 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    margin: 40px auto;
+    max-width: 400px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.profile-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.profile-bio {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    background: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
