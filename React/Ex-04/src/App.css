@@ -1,0 +1,57 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 320px;
+}
+
+button {
+  background: #4a90e2;
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #357ab8;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  word-break: break-all; /* evita quebrar layout se a senha for longa */
+  font-family: "Courier New", Courier, monospace;
+}
