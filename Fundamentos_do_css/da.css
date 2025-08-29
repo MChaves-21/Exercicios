@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+li {
+    background-color: #1c1a1d;
+    border: 4px solid transparent; /*se aplica isso para que o elemento com select não fique com uma borda maior */
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer/*muda o cursor do mouse*/;
+    display: inline-block;
+    margin-top: 32px;
+    margin-left: 32px;
+    padding: 32px;
+    height: 250px;/*altura do elemento*/
+    width: 400px;/*largura do elemento*/
+}
+
+.selected {
+    background-color: #363338;
+    border: 4px solid #0088d8;
+}
+
+.hidden {
+    display: none;
+}

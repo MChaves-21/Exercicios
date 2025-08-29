@@ -1,0 +1,8 @@
+const faturamentoTotal = produtos.map((produto)=>{
+    return{...produto,quantidade:produto.quantidade+10}
+}).filter((produto)=>produto.temDesconto).reduce((acumulador,produto)=>acumulador+produto.quantidade*produto.preco,0,)
+
+console.log(faturamentoTotal.toLocaleString('pt-br'{
+    style:'currency',
+    currency:'BRL'
+}))

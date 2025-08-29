@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio de paris</title>
+</head>
+
+<body>
+    <h1>parir</h1>
+    <label for="pais">Em qual país você vive:</label>
+    <input type="text" id="pais">
+    <input type="button" value="Verificar" onclick="estrang()">
+    <div id="res"></div>
+    <script>
+        function estrang() {
+            // Obtendo o valor do campo de texto
+            const origem = document.getElementById('pais').value.trim().toLowerCase();
+            const resposta = document.getElementById('res');
+
+            // Exibindo o país inserido
+            resposta.innerHTML = `<p>Você nasceu no país ${origem}</p>`;
+
+            // Verificando se o país é Brasil
+            if (origem === 'brasil') {
+                resposta.innerHTML += `<p>Você é nativo do Brasil!</p>`;
+            } else {
+                resposta.innerHTML += `<p>Você é gringo.</p>`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

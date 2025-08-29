@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-mails Cadastrados</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<!--para cada email do array ele vai exibir atraves do spam,e vai criar um botao do lado escrito excluir,quando esse botao e ativado um imput com o valor desse email vai ser enviado para a rota /emails/delete metodo post,para que possa trabalhar com seus valores,no js vai ser aplicado um metodo filter que vai filtra todos os elementos que sejam diferente dos value desse email recebido dessa forma formando um novo array sem esse valor,e sera encaminhado para a rota da pagina emails,que vai fazer um novo loop mas dessa vez sem o valor desse email ja que o array foi atualizado -->
+<body>
+  <div class="container">
+    <h1>E-mails Cadastrados</h1>
+    <ul>
+      <% emails.forEach(email=> { %>
+        <li>
+          <span>
+            <%= email %>
+          </span>
+          <span>
+            <form action="/emails/delete" method="post">
+              <input type="hidden" name="email" value="<%= email %>">
+              <button type="submit" class="btn-delete">Excluir</button>
+            </form>
+          </span>
+        </li>
+        <% }); %>
+    </ul>
+  </div>
+</body>
+
+</html>

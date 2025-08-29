@@ -1,0 +1,14 @@
+DEPENDENCIAS INSTALADAS
+npm install --save express zod
+npm install --save-dev @types/node @types/express typescript tsx
+express: Framework web para criar APIs REST.
+zod: Biblioteca de validação de dados.
+@types/node, @types/express: Tipos para trabalhar com Node.js e Express no TypeScript.
+typescript: O compilador TypeScript.
+tsx: Ferramenta para executar e compilar TypeScript diretamente (similar ao ts-node).
+PACKAGE.JSON
+"scripts": {
+  "dev": "tsx watch src/server.ts",  // Para desenvolvimento (compilação contínua)
+  "build": "tsc",                    // Para compilar o código TypeScript
+  "start": "node build/server.js"    // Para rodar o servidor após o build
+}

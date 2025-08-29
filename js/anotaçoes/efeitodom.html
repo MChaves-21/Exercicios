@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos dom</title>
+    <style>
+        div#area {
+            background: rgb(95, 107, 118);
+            color: #ffffff;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="saiu()">interaja...</div><!--quando houver o click em cima da div a função clicar sera disparada,
+    em vez de encher a div desse jeito da para adicionar essas ligações diretamente no js-->
+    <script>
+        //a.addeventListener('click',clicar)quando houver click ele ira executar a função clicar
+        //a.addeventListener('mousenter',entrar)quando o mouse entrar na area executara a função entrar...
+
+        var a = window.document.getElementById
+            ('area')//esta ligando o obj a ao elemento da div
+        function clicar() {
+            a.innerText = 'voçe clicou'
+            a.style.background = 'red'
+
+        }
+        function entrar() {
+            a.innerText = 'entrou'
+            a.style.background = 'green'
+        }
+        function saiu() {
+            a.innerText = 'saiu'
+            a.style.background = 'black'
+        }
+
+    </script>
+</body>
+
+</html>

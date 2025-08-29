@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o Dom</title>
+    <style>
+        body{
+            background:rgb(34, 0, 255);
+            color: white;
+            font:normal 18pt arial
+        }
+    </style>
+</head>
+<body><h1>Iniciando estudo DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>aprendendo a usar o <strong>Dom</strong>em Jarva script</p>
+    <div id="msg">Clique em min</div>
+    <script>
+        window.document.write('essa parte foi adicionada com dom')
+        window.document.write(window.document.URL)//tamben da para exibir algumas configurações da pagina,como chasert, navegator, app name,url.
+        //podem ser selecionados por marca,id,nome,classe,seletor
+        var p1=window.document.getElementsByTagName('p')[0]//selecionou a tag p,e escolheu a primeira entre elas
+        window.document.write('esta escrito assim:'+p1.innerText)//inertext o testo que esta dentro do primeiro paragrafo
+        p1.style.color = 'red'
+        let d = window.document.getElementById('msg')
+        d.style.color='black'
+        d.style.background='red'
+        var corpo = window.document.body
+        corpo.style.background= 'green'
+    </script>
+</body>
+</html>
