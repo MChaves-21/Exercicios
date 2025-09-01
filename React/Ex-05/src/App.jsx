@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import "./App.css"
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  let [email, setEmail] = useState("")
+  let [comentario, setComentario] = useState("")
+  let [listaComentarios, setListaComentarios] = useState([])
+
+  function ADEnvio(ev) {
+    ev.preventDefault()
+    if (!email || !comentario) return
+    setListaComentarios([
+      ...listaComentarios,
+      { email, comentario, id: Date.now() },
+    ])
+    setEmail("")
+    setComentario("")
+  }
+
+  function excluir(id) {
+    const novaLista = listaComentarios.filter((item) => item.id !== id)
+    setListaComentarios(novaLista)
+  }
 
   return (
-    <>
+    <div>
+      <h1>Seção de Comentários</h1>
+
+      <label htmlFor="email">Email</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <label htmlFor="comentario">Comentário</label>
+      <textarea
+        id="comentario"
+        value={comentario}
+        onChange={(e) => setComentario(e.target.value)}
+        rows="3"
+      />
+
+      <button onClick={ADEnvio}>Adicionar comentário</button>
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {listaComentarios.map((item) => (
+          <div key={item.id} className="comentario">
+            <p><strong>{item.email}</strong></p>
+            <p>{item.comentario}</p>
+            <button className="excluir" onClick={() => excluir(item.id)}>
+              Excluir
+            </button>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
-
-export default App
