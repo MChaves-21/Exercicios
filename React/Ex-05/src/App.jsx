@@ -11,7 +11,7 @@ export default function App() {
     if (!email || !comentario) return
     setListaComentarios([
       ...listaComentarios,
-      { email, comentario, id: Date.now() },
+      { email, comentario, id: Date.now(),data: new Date().toLocaleDateString() },
     ])
     setEmail("")
     setComentario("")
@@ -44,15 +44,20 @@ export default function App() {
       <button onClick={ADEnvio}>Adicionar comentário</button>
 
       <div>
-        {listaComentarios.map((item) => (
-          <div key={item.id} className="comentario">
-            <p><strong>{item.email}</strong></p>
-            <p>{item.comentario}</p>
-            <button className="excluir" onClick={() => excluir(item.id)}>
-              Excluir
-            </button>
-          </div>
-        ))}
+        {listaComentarios.length === 0 ? (
+          <p>Digite o primeiro comentário</p>
+        ) : (
+          listaComentarios.map((item) => (
+            <div key={item.id} className="comentario">
+              <p><strong>Email:{item.email}</strong></p>
+              <p>Data:{item.data}</p>
+              <p>Comentario:{item.comentario}</p>
+              <button className="excluir" onClick={() => excluir(item.id)}>
+                Excluir
+              </button>
+            </div>
+          ))
+        )}
       </div>
     </div>
   )
