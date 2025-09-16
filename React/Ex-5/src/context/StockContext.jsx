@@ -15,6 +15,7 @@ export function StockContextProvider({ children }) {
         items.forEach((item) => {
             item.createdAt = new Date(item.createdAt)
             item.updatedAt = new Date(item.updatedAt)
+            //as 2 linhas acima convertem as datas que estavam como string em objeto Date novamente
         })
         return items
     })
@@ -22,6 +23,8 @@ export function StockContextProvider({ children }) {
     const addItem = (item) => {
         setItems(current => {
             const updatedItems = [item, ...current]
+            //a linha acima adiciona o novo item no começo do array
+            //a linha abaixo atualiza o localStorage com o array atualizado
             localStorage.setItem('obc-react-stock', JSON.stringify(updatedItems))
             return updatedItems
         })
